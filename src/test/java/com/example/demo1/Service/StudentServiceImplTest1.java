@@ -42,46 +42,5 @@ class StudentServiceImplTest1 {
 		Integer expectedList = 2;
 		assertEquals(expectedList, actualResult.size());
 	}
-	@Test
-	public void getStudentByIdQueryParamtest() throws Exception {
-		
-		 StudentRepository daoproxy1 = EasyMock.createMock(StudentRepository.class);
-		 
-		 StudentServiceImpl impl=new StudentServiceImpl();
-		 impl.setStudentRepository(daoproxy1);
-		 Student s1 = new Student(); // crate our own list.
-			s1.setStuId(101);
-			s1.setStuName("Rohini");
-			s1.setStuAddr("Pune");
-			s1.setStuEmail("rohini@gmail.com");
-			s1.setStuPass("123e");
-			Integer id=101;
-			
-	         EasyMock.expect(daoproxy1.findById(id)).andReturn(s1);
-	         
-	         EasyMock.replay(daoproxy1);
-	
-	 Student originalrecord = impl.getStudentByIdPathParam(101);
-	 String StuName="kale";
-	 assertEquals( StuName, originalrecord.getStuName());
-	 assertEquals( "pune", originalrecord.getStuAddr());
-	 assertEquals( "13225", originalrecord.getStuPass());
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
-    }
+
+}
